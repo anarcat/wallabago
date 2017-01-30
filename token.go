@@ -31,7 +31,7 @@ type Token struct {
 	RefreshToken string `json:"refresh_token"`
 }
 
-func getToken() Token {
+func GetToken() Token {
 	tokenURL := Config.WallabagURL + "/oauth/v2/token"
 	resp, err := http.PostForm(tokenURL,
 		url.Values{"grant_type": {"password"},

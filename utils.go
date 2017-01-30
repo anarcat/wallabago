@@ -25,9 +25,9 @@ func getBodyOfURL(url string) string {
 	return string(b)
 }
 
-func getBodyOfAPIURL(url string) []byte {
+func GetBodyOfAPIURL(url string) []byte {
 	if token.TokenType == "" || token.AccessToken == "" {
-		token = getToken()
+		token = GetToken()
 	}
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)

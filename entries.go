@@ -53,9 +53,9 @@ func GetEntries(archive int, starred int, sort string, order string, page int, p
 		entriesURL += "tags=" + tags + "&"
 	}
 
-	//log.Printf("getEntries: entriesURL=%s", entriesURL)
-	body := getBodyOfAPIURL(entriesURL)
-	//log.Printf("getEntries: body=\n%v\n", string(body))
+	fmt.Printf("getEntries: entriesURL=%s\n", entriesURL)
+	body := GetBodyOfAPIURL(entriesURL)
+	//fmt.Printf("getEntries: body=\n%v\n", string(body))
 	var e Entries
 	if err := json.Unmarshal(body, &e); err != nil {
 		fmt.Fprintf(os.Stderr, "getEntries: json unmarshal failed: %v\n", err)
